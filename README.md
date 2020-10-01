@@ -1,6 +1,6 @@
 # Javascript Todo App
 
-Simple todo list app with javascript. The user can create a task, mark a task as completed and delete an already added task.
+Simple Todo list app using JavaScript. Users can add tasks, mark tasks as completed and delete them.
 
 ## Getting Started
 
@@ -9,25 +9,62 @@ Simple todo list app with javascript. The user can create a task, mark a task as
  - Browser e.g Chrome, Mozilla 
  - [Git](https://git-scm.com/)
 
-### Installing
+### How to install
 
 1. Clone the repository
 ```
 git clone https://github.com/javorkabotond/js-todo-app.git
 ```
-2. Click index.html and automatically opens the main browser
+2. Click index.html and the app automatically opens in the default browser
+
+## User interface
+
+The user interface comprises of:
+
+- a list to show tasks either to be done, marked as completed or deleted
+- a form with a text input and a button to allow the user to add new tasks
+
+## Scenarios
+
+### Empty list of tasks
+
+As a user, when I first open the app I see an empty list of tasks and a form to add a new task with text input and an Add button.
+
+### Adding a new task
+
+As a user, when I type into the text input and click Add, a new task will be created and shown in the list of tasks as well as the text input will be cleared so that I can add the next task.
+
+### Marking a task as completed
+
+...
+
+### Marking a task as not completed
+
+...
+
+### Deleting a task
+
+...
+
+### Renaming a task
+
+...
+
+### Filtering tasks by completion
+
+...
 
 ## Methods
 
 ### Add a task
 
-The first thing, I set up an array where I will push todo elem. Each todo itme will be an object with three properties:
+The first thing, I set up an array where I will push todo items. Each todo item will be an object with the following properties:
 
-- text (string): which holds whatever user types into the text input
-- checked (bool): which helps me know if a task has been marked completed or not
-- id (number): a unique identifier for the item
+- `id` (number): a unique identifier for the item
+- `text` (string): which holds whatever user types into the text input
+- `completed` (bool): which helps me know if a task has been marked completed or not
 
-### Render todo items
+### Render tasks
 
 Once a new todo item is added to the array, we want the app to be updated with the item rendered on the screen
 
@@ -35,14 +72,16 @@ Once a new todo item is added to the array, we want the app to be updated with t
 
 The user can mark a task completed. We need to listen for the click event on the checkbox and toggle the checked property on the corresponding todo item. 
 
-### Delete todo item 
+### Delete task
 
-Similar to the previous method. We will listen for the click event on the delete icon then grab the key of the parent and pass it off to the deleteTodo function which will remove the corresponding todo object in todoItems array send the todo item to renderTodo() to be removed from the dom.
+The user can delete a task. We will listen for the click event on the delete icon then grab the key of the parent and pass it off to the deleteTodo function which will remove the corresponding todo object in todoItems array send the todo item to renderTodo() to be removed from the dom.
 
-## Running the tests
-comming soon..
+## Running tests
 
-## Build With
+`yarn test`
+
+## Technologies used
+
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Jest](https://jestjs.io/)
 
