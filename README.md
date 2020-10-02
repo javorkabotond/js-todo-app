@@ -24,6 +24,10 @@ The user interface comprises of:
 - a list to show tasks either to be done, marked as completed or deleted
 - a form with a text input and a button to allow the user to add new tasks
 
+## Mockup
+
+![](images/mockup.png)
+
 ## Scenarios
 
 ### Empty list of tasks
@@ -36,27 +40,27 @@ As a user, when I type into the text input and click Add, a new task will be cre
 
 ### Marking a task as completed
 
-...
+As a user, when I completed task then I click to checkbox and the text of task realized to strikethrough. This indicates that I have completed the task
 
 ### Marking a task as not completed
 
-...
+As a user, when I not completed task then I click to checkbox and the text of task realized to basic text. 
 
 ### Deleting a task
 
-...
+As a user, when I would like to delete a task then I click to trash icon and the task is deleted from the list.
 
 ### Renaming a task
 
-...
+As a user, when I would like to rename a task then I click to pen icon and appear text input with the text and Save button. I change the text and click Save button, text of task will be update in the list of task.
 
 ### Filtering tasks by completion
 
-...
+As a user, when I click drop-down list and I choose whether I want to see all task, completed tasks or not completed tasks.
 
 ## Methods
 
-### Add a task
+### Add a new task
 
 The first thing, I set up an array where I will push todo items. Each todo item will be an object with the following properties:
 
@@ -74,7 +78,21 @@ The user can mark a task completed. We need to listen for the click event on the
 
 ### Delete task
 
-The user can delete a task. We will listen for the click event on the delete icon then grab the key of the parent and pass it off to the deleteTodo function which will remove the corresponding todo object in todoItems array send the todo item to renderTodo() to be removed from the dom.
+The user can delete a task. We will listen for the click event on the delete icon then grab the key of the parent and pass it off to the `deleteTodo()` function which will remove the corresponding todo object in todoItems array send the todo item to `renderTodo()` to be removed from the dom.
+
+### Rename task
+
+The user can rename a task. We will listen for the clic event on the edit icon and appear text input with the text and save button. Then we can change text for task. After we click save button then grab the key of the parent and pass it off to the `editTodo()` function which will update the orresponding todo object in todoItems array send the todo item to `renderTodo()` to be removed from the dom.
+
+### Filter tasks by completion
+
+We will click the select button what contain three options: 
+
+- `All`: We will see all task.
+- `Completed`: We will see completed task
+- `Not completed`: We will see not completed task
+
+When user will choose option then call `renderTodo()` what refresh dom.
 
 ## Running tests
 
@@ -86,5 +104,5 @@ The user can delete a task. We will listen for the click event on the delete ico
 - [Jest](https://jestjs.io/)
 
 ## Author
-- Botond Javorka
+ - Botond Javorka
 
