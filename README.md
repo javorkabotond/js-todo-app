@@ -52,7 +52,7 @@ As a user, when I would like to delete a task then I click to trash icon and the
 
 ### Renaming a task
 
-As a user, when I would like to rename a task then I click to pen icon and appear text input with the text and Save button. I change the text and click Save button, text of task will be update in the list of task.
+As a user, when I would like to rename a task then I click to pen icon and appear text input with the text and save button. I change the text and click save button, text of task will be update in the list of task.
 
 ### Filtering tasks by completion
 
@@ -78,11 +78,11 @@ The user can mark a task completed. We need to listen for the click event on the
 
 ### Delete task
 
-The user can delete a task. We will listen for the click event on the delete icon then grab the key of the parent and pass it off to the `deleteTodo()` function which will remove the corresponding todo object in todoItems array send the todo item to `renderTodo()` to be removed from the dom.
+The user can delete a task. We will listen for the click event on the delete icon then grab the key of the parent and pass it off to the `deleteTask()` function which will remove the corresponding todo object in todoItems array send the todo item to `renderTodo()` to be removed from the dom.
 
 ### Rename task
 
-The user can rename a task. We will listen for the clic event on the edit icon and appear text input with the text and save button. Then we can change text for task. After we click save button then grab the key of the parent and pass it off to the `editTodo()` function which will update the orresponding todo object in todoItems array send the todo item to `renderTodo()` to be removed from the dom.
+The user can rename a task. We will listen for the clic event on the edit icon and appear text input with the text and save button. Then we can change text for task. After we click save button then grab the key of the parent and pass it off to the `editTask()` function which will update the orresponding todo object in todoItems array send the todo item to `renderTodo()` to be removed from the dom.
 
 ### Filter tasks by completion
 
