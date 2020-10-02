@@ -26,7 +26,7 @@ The user interface comprises of:
 
 ## Mockup
 
-![](images/mockup.png)
+![](mockup.png)
 
 ## Scenarios
 
