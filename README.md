@@ -40,19 +40,19 @@ As a user, when I type into the text input and click Add, a new task will be cre
 
 ### Marking a task as completed
 
-As a user, when I completed task then I click to checkbox and the text of task realized to strikethrough. This indicates that I have completed the task
+As a user, when I complete a task then I click on the checkbox and the text formatting changes to strikethrough to indicate that the task has been completed.
 
 ### Marking a task as not completed
 
-As a user, when I not completed task then I click to checkbox and the text of task realized to basic text. 
+As a user, when I not complete a task then I click on the checkbox and the text formatting changes to basic style to indicate that the task has been completed. 
 
 ### Deleting a task
 
-As a user, when I would like to delete a task then I click to trash icon and the task is deleted from the list.
+As a user, when I click the trash icon of a task, then the task is deleted from the list.
 
 ### Renaming a task
 
-As a user, when I would like to rename a task then I click to pen icon and appear text input with the text and save button. I change the text and click save button, text of task will be update in the list of task.
+As a user, when I click on the pen icon of a task, then a text input appears with the text and save button so that when I change the text and click save button, the task will be updated in the list of tasks.
 
 ### Filtering tasks by completion
 
