@@ -24,24 +24,36 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Javascript Todo App</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <ul id="todo_list">
-
-      </ul>
-    </div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <main>
+      <header id="title"><h1>Todo App</h1></header>
+      <section id="form_section">
+        <form>
+          <input type="text" placeholder="E.g Go to run">
+          <button id="add_btn">Add</button>
+        </form>
+      </section>
+      <!-- <section id="select_section">
+        <select>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </section> -->
+      <section id="list_section">
+        <ul id="todo_list">
+          <li id="list_elem">
+            Task 1
+            <button id="complete_btn">Complete</button>
+            <button id="edit_btn">Edit</button>
+            <button id="delete_btn">Delete</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>&copy; Botond Javorka 2020</footer>
   </body>
 </html>
