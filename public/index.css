@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-#form_section input, #add_btn {
+#form_section input, #add_btn, #select_input {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
@@ -34,10 +34,62 @@ body {
   background: #1125d8;
   color: white;
 }
+#select_input { 
+  margin-left: 15px;
+}
 #list_section { 
   display: flex;
   justify-content: center;
+  align-items: center; 
+}
+#todo_list { 
+  min-width: 40%;
+  list-style: none;
+}
+#list_elem{
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  transition: all 1s ease;
+}
+#task{
+  flex: 1;
+  padding-left: 0.5rem;
+}
+#complete_btn, #edit_btn, #delete_btn{
+  color: black;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#complete_btn {
+  background-color: rgb(42, 133, 42);
+  border-radius: 50%;
+  color: white;
+}
+#edit_btn{
+  background-color: orange;
+  color: white;
+}
+#delete_btn{
+  background-color: red;
+  color: white;
+}
+#complete_btn:hover {
+  border: 1px solid black;
+  color: black;
+}
+#edit_btn:hover{
+  color: black;
+  border: 1px solid black;
+}
+#delete_btn:hover{
+  color: black;
+  border: 1px solid black;
 }
 footer {
   position: fixed;
@@ -45,7 +97,6 @@ footer {
   bottom: 0;
   width: 100%;
   height: 5%;
-  background-color:rgba(0, 0, 0, 0);
   color: black;
   text-align: center;
   font-size: 30px;

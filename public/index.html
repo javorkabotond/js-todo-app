@@ -24,6 +24,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="index.css">
     <title>Javascript Todo App</title>
   </head>
@@ -34,23 +40,24 @@
         <form>
           <input type="text" placeholder="E.g Go to run">
           <button id="add_btn">Add</button>
+          <select id="select_input">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
         </form>
       </section>
-      <!-- <section id="select_section">
-        <select>
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </section> -->
       <section id="list_section">
         <ul id="todo_list">
-          <li id="list_elem">
-            Task 1
-            <button id="complete_btn">Complete</button>
-            <button id="edit_btn">Edit</button>
-            <button id="delete_btn">Delete</button>
-          </li>
+          <div id="list_elem">
+            <button id="complete_btn"><i class="fas fa-check"></i></button>
+            <li id="task">
+              Task 1
+            </li>
+            
+            <button id="edit_btn"><i class="fas fa-pen"></i></button>
+            <button id="delete_btn"><i class="fas fa-trash"></i></button>
+          </div>
         </ul>
       </section>
     </main>
