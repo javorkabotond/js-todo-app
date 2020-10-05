@@ -103,6 +103,7 @@ When user will choose option then call `renderTodo()` what refresh dom.
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [CRA](https://github.com/facebook/create-react-app)
 - [Jest](https://jestjs.io/)
+- [Font Awesome](https://fontawesome.com/start)
 
 ## Author
  - Botond Javorka
