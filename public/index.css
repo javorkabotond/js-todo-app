@@ -46,7 +46,7 @@ body {
   min-width: 40%;
   list-style: none;
 }
-#list_elem{
+.list_elem{
   margin: 0.5rem;
   font-size: 2.5rem;
   color: black;
@@ -55,37 +55,37 @@ body {
   align-items: center;
   transition: all 1s ease;
 }
-#task{
+.task{
   flex: 1;
   padding-left: 0.5rem;
 }
-#complete_btn, #edit_btn, #delete_btn{
+.complete_btn, .edit_btn, .delete_btn{
   color: black;
   border: none;
   padding: 1rem;
   font-size: 1rem;
   cursor: pointer;
 }
-#complete_btn {
+.complete_btn {
   background-color: rgb(42, 133, 42);
   border-radius: 50%;
   color: white;
 }
-#edit_btn{
+.edit_btn{
   background-color: orange;
   color: white;
 }
-#delete_btn{
+.delete_btn{
   background-color: red;
   color: white;
 }
-#complete_btn:hover {
+.complete_btn:hover {
   color: black;
 }
-#edit_btn:hover{
+.edit_btn:hover{
   color: black;
 }
-#delete_btn:hover{
+.delete_btn:hover{
   color: black;
 }
 footer {
