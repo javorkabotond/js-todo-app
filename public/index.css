@@ -80,16 +80,13 @@ body {
   color: white;
 }
 #complete_btn:hover {
-  border: 1px solid black;
   color: black;
 }
 #edit_btn:hover{
   color: black;
-  border: 1px solid black;
 }
 #delete_btn:hover{
   color: black;
-  border: 1px solid black;
 }
 footer {
   position: fixed;
