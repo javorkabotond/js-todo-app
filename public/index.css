@@ -3,50 +3,63 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-image: linear-gradient(120deg, #3232a8 0%, #32a8a0 100%);
   color: black;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
-#title {
+
+.title {
   font-size: 2rem;
 }
-#title, #form_section {
+
+.title,
+.form_section {
   min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#form_section input, #add_btn, #select_input {
+
+.form_section input,
+.add_btn,
+.select_input {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
   background: white;
 }
-#add_btn {
-  color:black;
+
+.add_btn {
+  color: black;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-#add_btn:hover {
+
+.add_btn:hover {
   background: #1125d8;
   color: white;
 }
-#select_input { 
+
+.select_input {
   margin-left: 15px;
 }
-#list_section { 
+
+.list_section {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
-#todo_list { 
+
+.todo_list {
   min-width: 40%;
   list-style: none;
 }
-.list_elem{
+
+.list_elem {
   margin: 0.5rem;
   font-size: 2.5rem;
   color: black;
@@ -55,39 +68,50 @@ body {
   align-items: center;
   transition: all 1s ease;
 }
-.task{
+
+.task {
   flex: 1;
   padding-left: 0.5rem;
 }
-.complete_btn, .edit_btn, .delete_btn{
+
+.complete_btn,
+.edit_btn,
+.delete_btn {
   color: black;
   border: none;
   padding: 1rem;
   font-size: 1rem;
   cursor: pointer;
 }
+
 .complete_btn {
   background-color: rgb(42, 133, 42);
   border-radius: 50%;
   color: white;
 }
-.edit_btn{
+
+.edit_btn {
   background-color: orange;
   color: white;
 }
-.delete_btn{
+
+.delete_btn {
   background-color: red;
   color: white;
 }
+
 .complete_btn:hover {
   color: black;
 }
-.edit_btn:hover{
+
+.edit_btn:hover {
   color: black;
 }
-.delete_btn:hover{
+
+.delete_btn:hover {
   color: black;
 }
+
 footer {
   position: fixed;
   left: 0;
