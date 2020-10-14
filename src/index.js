@@ -28,17 +28,18 @@ addBtn.addEventListener('click', event => {
 function renderTodo(todo) {
   const todoList = document.querySelector('.todo_list');
 
-  const article = document.createElement('article');
-  article.setAttribute('class', 'list_elem');
-  article.setAttribute('data-key', todo.id);
+  const listElem = document.createElement('li');
+  listElem.setAttribute('class', 'list_elem');
+  listElem.setAttribute('data-key', todo.id);
 
   const completeBtn = document.createElement('button');
   completeBtn.setAttribute('class', 'complete_btn');
   completeBtn.innerText = 'C';
 
-  const listElem = document.createElement('li');
-  listElem.setAttribute('class', 'task');
-  listElem.innerText = todo.text;
+  
+  const article = document.createElement('article');
+  article.setAttribute('class', 'task');
+  article.innerText = todo.text;
 
   const editBtn = document.createElement('button');
   editBtn.setAttribute('class', 'edit_btn');
@@ -48,10 +49,11 @@ function renderTodo(todo) {
   deleteBtn.setAttribute('class', 'delete_btn');
   deleteBtn.innerText = 'D';
 
-  article.appendChild(completeBtn);
-  article.appendChild(listElem);
-  article.appendChild(editBtn);
-  article.appendChild(deleteBtn);
+  listElem.appendChild(completeBtn);
+  listElem.appendChild(article);
+  listElem.appendChild(editBtn);
+  listElem.appendChild(deleteBtn);
 
-  todoList.appendChild(article)
+  todoList.appendChild(listElem)
 }
+
