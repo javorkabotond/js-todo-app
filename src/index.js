@@ -61,7 +61,6 @@ function renderTodo(todo) {
     listElem.appendChild(uncomleteBtn);
     article.setAttribute('class', 'uncomplete_task');
   }
-  
   listElem.appendChild(article);
   listElem.appendChild(editBtn);
   listElem.appendChild(deleteBtn);
@@ -74,9 +73,11 @@ function renderTodo(todo) {
 
 }
 
-
 todoList.addEventListener('click', event => {
   if (event.target.classList.contains('complete_btn')) {
+    const itemKey = event.target.parentElement.dataset.key;
+    toggleDone(itemKey);
+  } else if (event.target.classList.contains('uncomplete_btn')) {
     const itemKey = event.target.parentElement.dataset.key;
     toggleDone(itemKey);
   }
@@ -85,5 +86,11 @@ todoList.addEventListener('click', event => {
 function toggleDone(key) {
   const index = todoItems.findIndex(item => item.id === Number(key));
   todoItems[index].checked = !todoItems[index].checked;
+  renderTodo(todoItems[index]);
+}
+
+function toggleNotReady(key) {
+  const index = todoItems.findIndex(item => item.id === Number(key));
+  todoItems[index].checked = todoItems[index].checked;
   renderTodo(todoItems[index]);
 }
