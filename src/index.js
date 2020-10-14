@@ -1,4 +1,5 @@
 const addBtn = document.querySelector('.add_btn');
+const todoList = document.querySelector('.todo_list');
 
 let todoItems = [];
 
@@ -28,6 +29,8 @@ addBtn.addEventListener('click', event => {
 function renderTodo(todo) {
   const todoList = document.querySelector('.todo_list');
 
+  const item = document.querySelector(`[data-key='${todo.id}']`);
+
   const listElem = document.createElement('li');
   listElem.setAttribute('class', 'list_elem');
   listElem.setAttribute('data-key', todo.id);
@@ -36,7 +39,10 @@ function renderTodo(todo) {
   completeBtn.setAttribute('class', 'complete_btn');
   completeBtn.innerText = 'C';
 
-  
+  const uncomleteBtn = document.createElement('button');
+  uncomleteBtn.setAttribute('class', 'uncomplete_btn');
+  uncomleteBtn.innerText = 'X';
+
   const article = document.createElement('article');
   article.setAttribute('class', 'task');
   article.innerText = todo.text;
@@ -49,11 +55,35 @@ function renderTodo(todo) {
   deleteBtn.setAttribute('class', 'delete_btn');
   deleteBtn.innerText = 'D';
 
-  listElem.appendChild(completeBtn);
+  if (todo.checked === false) {
+    listElem.appendChild(completeBtn);
+  } else {
+    listElem.appendChild(uncomleteBtn);
+    article.setAttribute('class', 'uncomplete_task');
+  }
+  
   listElem.appendChild(article);
   listElem.appendChild(editBtn);
   listElem.appendChild(deleteBtn);
 
-  todoList.appendChild(listElem)
+  if (item) {
+    todoList.replaceChild(listElem, item);
+  } else {
+    todoList.append(listElem);
+  }
+
 }
 
+
+todoList.addEventListener('click', event => {
+  if (event.target.classList.contains('complete_btn')) {
+    const itemKey = event.target.parentElement.dataset.key;
+    toggleDone(itemKey);
+  }
+})
+
+function toggleDone(key) {
+  const index = todoItems.findIndex(item => item.id === Number(key));
+  todoItems[index].checked = !todoItems[index].checked;
+  renderTodo(todoItems[index]);
+}
