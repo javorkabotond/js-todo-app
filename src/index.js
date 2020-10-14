@@ -88,9 +88,3 @@ function toggleDone(key) {
   todoItems[index].checked = !todoItems[index].checked;
   renderTodo(todoItems[index]);
 }
-
-function toggleNotReady(key) {
-  const index = todoItems.findIndex(item => item.id === Number(key));
-  todoItems[index].checked = todoItems[index].checked;
-  renderTodo(todoItems[index]);
-}
