@@ -15,7 +15,7 @@ body {
   font-size: 2rem;
 }
 
-.uncomplete_task {
+.incomplete_task {
   text-decoration: line-through;
   flex: 1;
   padding-left: 0.5rem;
@@ -81,7 +81,7 @@ body {
 }
 
 .complete_btn,
-.uncomplete_btn,
+.incomplete_btn,
 .edit_btn,
 .delete_btn {
   color: black;
@@ -97,7 +97,7 @@ body {
   color: white;
 }
 
-.uncomplete_btn {
+.incomplete_btn {
   background-color: rgb(77, 16, 16);
   border-radius: 50%;
   color: white;
@@ -117,7 +117,7 @@ body {
   color: black;
 }
 
-.uncomplete_btn:hover {
+.incomplete_btn:hover {
   color: black;
 }
 
