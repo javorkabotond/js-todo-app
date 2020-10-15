@@ -44,9 +44,9 @@ function renderTodo(todo) {
   completeBtn.setAttribute('class', 'complete_btn');
   completeBtn.innerText = 'C';
 
-  const incomleteBtn = document.createElement('button');
-  incomleteBtn.setAttribute('class', 'incomplete_btn');
-  incomleteBtn.innerText = 'X';
+  const incompleteBtn = document.createElement('button');
+  incompleteBtn.setAttribute('class', 'incomplete_btn');
+  incompleteBtn.innerText = 'X';
 
   const article = document.createElement('article');
   article.setAttribute('class', 'task');
@@ -63,7 +63,7 @@ function renderTodo(todo) {
   if (todo.checked === false) {
     listElem.appendChild(completeBtn);
   } else {
-    listElem.appendChild(incomleteBtn);
+    listElem.appendChild(incompleteBtn);
     article.setAttribute('class', 'incomplete_task');
   }
   listElem.appendChild(article);
@@ -91,14 +91,18 @@ todoList.addEventListener('click', event => {
   }
 })
 
+function getIndex(key) { 
+  return todoItems.findIndex(item => item.id === Number(key));
+}
+
 function toggleDone(key) {
-  const index = todoItems.findIndex(item => item.id === Number(key));
+  const index = getIndex(key)
   todoItems[index].checked = !todoItems[index].checked;
   renderTodo(todoItems[index]);
 }
 
 function deleteTodo(key) {
-  const index = todoItems.findIndex(item => item.id === Number(key));
+  const index = getIndex(key);
   const todo = {
     deleted: true,
     ...todoItems[index]
