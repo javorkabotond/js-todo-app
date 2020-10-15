@@ -31,6 +31,11 @@ function renderTodo(todo) {
 
   const item = document.querySelector(`[data-key='${todo.id}']`);
 
+  if (todo.deleted) {
+    item.remove();
+    return
+  }
+
   const listElem = document.createElement('li');
   listElem.setAttribute('class', 'list_elem');
   listElem.setAttribute('data-key', todo.id);
@@ -39,9 +44,9 @@ function renderTodo(todo) {
   completeBtn.setAttribute('class', 'complete_btn');
   completeBtn.innerText = 'C';
 
-  const uncomleteBtn = document.createElement('button');
-  uncomleteBtn.setAttribute('class', 'uncomplete_btn');
-  uncomleteBtn.innerText = 'X';
+  const incomleteBtn = document.createElement('button');
+  incomleteBtn.setAttribute('class', 'incomplete_btn');
+  incomleteBtn.innerText = 'X';
 
   const article = document.createElement('article');
   article.setAttribute('class', 'task');
@@ -58,8 +63,8 @@ function renderTodo(todo) {
   if (todo.checked === false) {
     listElem.appendChild(completeBtn);
   } else {
-    listElem.appendChild(uncomleteBtn);
-    article.setAttribute('class', 'uncomplete_task');
+    listElem.appendChild(incomleteBtn);
+    article.setAttribute('class', 'incomplete_task');
   }
   listElem.appendChild(article);
   listElem.appendChild(editBtn);
@@ -77,9 +82,12 @@ todoList.addEventListener('click', event => {
   if (event.target.classList.contains('complete_btn')) {
     const itemKey = event.target.parentElement.dataset.key;
     toggleDone(itemKey);
-  } else if (event.target.classList.contains('uncomplete_btn')) {
+  } else if (event.target.classList.contains('incomplete_btn')) {
     const itemKey = event.target.parentElement.dataset.key;
     toggleDone(itemKey);
+  } else if (event.target.classList.contains('delete_btn')) {
+    const itemKey = event.target.parentElement.dataset.key;
+    deleteTodo(itemKey);
   }
 })
 
@@ -87,4 +95,14 @@ function toggleDone(key) {
   const index = todoItems.findIndex(item => item.id === Number(key));
   todoItems[index].checked = !todoItems[index].checked;
   renderTodo(todoItems[index]);
+}
+
+function deleteTodo(key) {
+  const index = todoItems.findIndex(item => item.id === Number(key));
+  const todo = {
+    deleted: true,
+    ...todoItems[index]
+  };
+  todoItems = todoItems.filter(item => item.id !== Number(key));
+  renderTodo(todo);
 }
